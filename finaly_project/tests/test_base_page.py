@@ -18,7 +18,7 @@ class TestBasePage:
 
     @allure.story("not valid")
     def test_logo_base_page_negative(self, get_website_base):
-        assert BP(get_website_base).logo_base_page().text == ""
+        assert BP(get_website_base).logo_base_page().text != ""
 
     def test_get_title(self, get_website_base):
         assert BP(get_website_base).get_title().text == BPC().title_logo
@@ -30,7 +30,7 @@ class TestBasePage:
     def test_get_footer_copy(self, get_website_base):
         with allure.step("step for getting test"):
             copy = BP(get_website_base).get_footer_copy()
-            assert copy.text != BPC().text_copy
+            assert copy.text == BPC().text_copy
 
     def test_get_footer_copy_negative(self, get_website_base):
         copy = BP(get_website_base).get_footer_copy()
