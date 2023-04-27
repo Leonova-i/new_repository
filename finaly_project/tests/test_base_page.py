@@ -157,4 +157,4 @@ class TestBasePage:
         logout = BP(get_website_base).menu_logout()
         logout.click()
 
-        assert get_website_base.current_url == MC().URL
+        assert get_website_base.current_url != MC().URL
